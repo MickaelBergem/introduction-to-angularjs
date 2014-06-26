@@ -66,6 +66,7 @@
                     <li>Powerfull framework from Google</li>
                     <li>Easy data-Binding</li>
                     <li>Clean DOM Manipulation</li>
+                    <li>...</li>
                 </ul>
             </section>
         </section>
@@ -200,21 +201,21 @@
             <section>
                 <h2>Templates</h2>
                     <pre><code class="jade">
-table.table
-    tr
-        th Room
-        th Price
-        th
-    tr(ng-repeat='room in rooms')
-        td {[{ room.name }]}
-        td {[{ room.price  / 100 | currency }]}
-        td
-            button.btn.btn-primary(ng-click="share(room)")
-                i.fa.fa-share-alt
-            |  Share
+    table.table
+        tr
+            th Room
+            th Price
+            th
+        tr(ng-repeat='room in rooms')
+            td {[{ room.name }]}
+            td {[{ room.price  / 100 | currency }]}
+            td
+                button.btn.btn-primary(ng-click="share(room)")
+                    i.fa.fa-share-alt
+                |  Share
 
-a(ng-click="purchase()")
-    button.btn.btn-success() {[{ 'Pay the selected rooms'|trans }]}
+    a(ng-click="purchase()")
+        button.btn.btn-success() {[{ 'Pay the selected rooms'|trans }]}
             </code></pre>
             </section>
 
