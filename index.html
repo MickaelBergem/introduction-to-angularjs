@@ -83,9 +83,11 @@
                 <h2>Bower</h2>
                 <img width="70%" alt="bower" src="img/bower-logo.png">
             </section>
-
             <section data-background-color="#d0d0d0">
                 <img width="70%" alt="Coffeescript" src="img/coffeescript.jpg">
+            </section>
+            <section data-background-color="#d0d0d0">
+                <img width="70%" alt="Coffeescript" src="img/jade-logo.png">
             </section>
             <section>
                 <img width="40%" alt="less" src="img/less.png">
@@ -120,6 +122,7 @@
             <section>
                 <h2>AngularJS: Let's go</h2>
                 <ul>
+                    <li>Module</li>
                     <li>Routing</li>
                     <li>Controllers</li>
                     <li>Templates</li>
@@ -128,6 +131,19 @@
                 </ul>
             </section>
             <section>
+                <h2>Module</h2>
+                <p>Creation de l'application</p>
+                    <pre><code class="js">
+    worldia = angular.module 'worldia',
+        'ng'
+        'ui.router'
+        'ui.bootstrap'
+        'pascalprecht.translate'
+        'ngBootstrap'
+        'app.templates'
+
+                    </code></pre>
+            </section>            <section>
                 <h2>Routing</h2>
                 <p>$stateProvider</p>
                     <pre><code class="js">
@@ -164,10 +180,30 @@
             <section>
                 <h2>Templates</h2>
                     <pre><code class="jade">
+        doctype html
+        html(lang="en", ng-app="name-of-application")
+            head
+                title FlexInvest Store
+                meta(charset="utf-8")
+                link(rel="stylesheet", href="/css/app.css")
+            body(ng-class="$state.current.name")
+                header.main-header
+
+            section.main-section
+            main.container(ui-view)
+
+            script(src="/js/vendor.js")
+            script(src="/js/templates.js")
+            script(src="/js/app.js")
+            </code></pre>
+            </section>
+            <section>
+                <h2>Templates</h2>
+                    <pre><code class="jade">
 table.table
     tr
-        th Chambre
-        th Prix
+        th Room
+        th Price
         th
     tr(ng-repeat='room in rooms')
         td {[{ room.name }]}
@@ -175,10 +211,10 @@ table.table
         td
             button.btn.btn-primary(ng-click="share(room)")
                 i.fa.fa-share-alt
-            |  Partager
+            |  Share
 
 a(ng-click="purchase()")
-    button.btn.btn-success() {[{ 'Payer les chambres sélectionnés'|trans }]}
+    button.btn.btn-success() {[{ 'Pay the selected rooms'|trans }]}
             </code></pre>
             </section>
 
