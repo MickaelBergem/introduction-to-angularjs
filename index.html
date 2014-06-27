@@ -132,7 +132,7 @@
                 <h2>Module</h2>
                 <p>Creation de l'application</p>
                     <pre><code class="js">
-    worldia = angular.module 'worldia',
+    myapp = angular.module 'myapp',
         'ng'
         'ui.router'
         'ui.bootstrap'
@@ -145,7 +145,7 @@
                 <h2>Routing</h2>
                 <p>$stateProvider</p>
                     <pre><code class="js">
-            worldia.config ($stateProvider, $urlRouterProvider) ->
+            myapp.config ($stateProvider, $urlRouterProvider) ->
                 $stateProvider
                 .state 'search',
                     url: '/search'
@@ -163,7 +163,7 @@
             <section>
                 <h2>Controllers</h2>
                     <pre><code class="js">
-    worldia.controller 'CashbackCtrl', ($scope, cashback, sponsorship) ->
+    myapp.controller 'CashbackCtrl', ($scope, cashback, sponsorship) ->
         $scope.user_email = ""
 
         $scope.sendMail = () ->
@@ -181,7 +181,7 @@
         doctype html
         html(lang="en", ng-app="name-of-application")
             head
-                title FlexInvest Store
+                title Store
                 meta(charset="utf-8")
                 link(rel="stylesheet", href="/css/app.css")
             body(ng-class="$state.current.name")
@@ -220,7 +220,7 @@
                 <h2>Services</h2>
                 <p>Use services to organize and share code across your app. Make your controllers lighter!</p>
                     <pre><code class="js">
-    angular.module('worldia').factory 'cart', ($q, $http) ->
+    angular.module('myapp').factory 'cart', ($q, $http) ->
         add: (room) ->
             data =
                 token: room.token
