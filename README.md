@@ -1,5 +1,5 @@
-# Symfony et Grunt
+# AngularJs
 
-Présentation de Symfony avec Grunt
+Short presentation of the basic of AngularJs
 
-Cette présentation a été réalisée avec [reveal.js](http://revealjs.com/)
+This was made using [reveal.js](http://revealjs.com/)
